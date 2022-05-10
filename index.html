@@ -36,12 +36,11 @@
                             <img src="img/avatar_io.jpg" alt="Avatar Personale">
                             <h6>Sofia</h6>
                         </div>
-                        <div id="contact-header-icon">
+                        <div class="contact-header-icon">
                             <i class="fas fa-circle-notch"></i>
                             <i class="fas fa-comment-alt"></i>
                             <i class="fas fa-ellipsis-v"></i>
                         </div>
-
                     </div>
                     <!-- Notifica di abilitazione delle notifiche -->
                     <div class="contact-notify-message">
@@ -94,7 +93,18 @@
 
                     <!-- Header con info del mittente attuale -->
                     <div class="chat-header">
-                        Header con info del mittente attuale
+                        <div>
+                            <img :src="'img/avatar_1.jpg'" :alt="Michele">
+                            <div class="contactTextBox">
+                                <h6>Michele</h6>
+                                <p>Ultimo accesso alle 12:00</p>
+                            </div>
+                        </div>
+                        <div class="chat-header-icon">
+                            <i class="fas fa-search"></i>
+                            <i class="fas fa-paperclip"></i>
+                            <i class="fas fa-ellipsis-v"></i>
+                        </div>
                     </div>
                     <!-- Sezione messaggi -->
                     <div class="chat-main">
@@ -102,7 +112,9 @@
                     </div>
                     <!-- Footer per scrittura testo e invio -->
                     <div class="chat-footer">
-                        Footer per scrittura testo e invio
+                        <i class="far fa-smile"></i>
+                        <input type="text" name="writeMessage" id="writeMessage">
+                        <i class="fas fa-microphone"></i>
                     </div>
 
                 </section>

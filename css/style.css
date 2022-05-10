@@ -40,6 +40,7 @@ html {
 }
 
 /* Sezione Contatti */
+.chat-header,
 .contact-header {
     display: flex;
     justify-content: space-between;
@@ -49,6 +50,7 @@ html {
     background-color: #eaeaea;
 }
 
+.chat-header img,
 .contact-header img {
     width: 50px;
     border-radius: 50%;
@@ -56,17 +58,20 @@ html {
     margin-left: 1rem;
 }
 
+.chat-header h6,
 .contact-header h6 {
     font-size: 1rem;
     display: inline-block;
     vertical-align: middle;
 }
 
-#contact-header-icon {
+.chat-header-icon,
+.contact-header-icon {
     margin-right: 1rem;
 }
 
-#contact-header-icon i {
+.chat-header-icon i,
+.contact-header-icon i {
     font-size: 1.3rem;
     color: #b1b1b1;
     margin: 0 .6rem;
@@ -137,6 +142,7 @@ html {
     height: calc(100% - 190px);
     overflow-y: auto;
     background-color: #ffffff;
+    padding-bottom: 4rem; /*Per lasciare un pò di spazio bianco sotto l alista dei contatti*/
 }
 
 .contact {
@@ -181,13 +187,19 @@ html {
 .chat-header {
     width: 100%;
     height: 70px;
-    background-color: orange;
+    background-color: #eaeaea;
+    border-left: 1px solid #dadada;
+}
+
+.chat-header > div {
+    display: flex;
+    align-items: center;
 }
 
 .chat-footer {
     width: 100%;
     height: 70px;
-    background-color: orangered;
+    background-color: #eaeaea;
 }
 
 .chat-main {
@@ -195,6 +207,7 @@ html {
     height: calc(100% - 140px);
     overflow-y: auto;
     background-color: #f3eeea;
+    background-image: url(../img/mine.jpg);
 }
 
 
