@@ -33,8 +33,8 @@
                     <!-- Header con info dell'utente -->
                     <div class="contact-header">
                         <div>
-                        <img src="img/avatar_io.jpg" alt="Avatar Personale">
-                        <span>Sofia</span>
+                            <img src="img/avatar_io.jpg" alt="Avatar Personale">
+                            <h6>Sofia</h6>
                         </div>
                         <div id="contact-header-icon">
                             <i class="fas fa-circle-notch"></i>
@@ -53,11 +53,39 @@
                     </div>
                     <!-- Bara di ricerca contatti -->
                     <div class="contact-search-bar">
-                        Bara di ricerca contatti
+                        <div>
+                            <i class="fas fa-search"></i>
+                            <input type="text" name="searchContacts" id="searchContacts" placeholder="Cerca o inizia una nuova chat">
+                        </div>
                     </div>
                     <!-- Lista dei contatti -->
                     <div class="contact-list">
-                        Lista dei contatti
+                        <div v-for="element in contacts">
+                            <div class="contact">
+                                <div class="contactImg">
+                                    <img :src="'img/avatar' +element.avatar+ '.jpg'" :alt="element.name">
+                                </div>
+                                <div class="contactTextBox">
+                                    <h6>{{element.name}}</h6>
+                                    <p>Ultimo messaggio inviato</p>
+                                </div>
+                                <div class="contactMessageDate">
+                                    <h6>12:00</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="contact">
+                            <div class="contactImg">
+                                <img src="img/avatar_1.jpg" alt="Michele">
+                            </div>
+                            <div class="contactTextBox">
+                                <h6>Michele</h6>
+                                <p>Ultimo messaggio inviato</p>
+                            </div>
+                            <div class="contactMessageDate">
+                                <h6>12:00</h6>
+                            </div>
+                        </div> -->
                     </div>
                 </section>
 
