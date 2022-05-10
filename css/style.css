@@ -32,38 +32,85 @@ html {
 .contact-container {
     width: 35%;
     height: 100%;
-    background-color: lightgreen;
 }
 
 .chat-container {
     width: 65%;
     height: 100%;
-    background-color: lightseagreen;
 }
 
 /* Sezione Contatti */
 .contact-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
     height: 70px;
-    background-color: red;
+    background-color: #eaeaea;
+}
+
+.contact-header img {
+    width: 50px;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-left: 1rem;
+}
+
+.contact-header span {
+    vertical-align: middle;
+}
+
+#contact-header-icon {
+    margin-right: 1rem;
+}
+
+#contact-header-icon i {
+    font-size: 1.3rem;
+    color: #b1b1b1;
+    margin: 0 .6rem;
 }
 
 .contact-notify-message {
+    display: flex;
+    align-items: center;
     width: 100%;
     height: 80px;
-    background-color: aquamarine;
+    background-color: #8edafc;
+}
+
+.contact-notify-message div {
+    margin-left: 1rem;
+}
+
+.contact-notify-message div p {
+    font-weight: 600;
+}
+
+.contact-notify-message div a {
+    font-size: .8rem;
+    color: rgba(128, 128, 128, .7);
+}
+
+.contact-notify-message i {
+    font-size: 1.2rem;
+    padding: 1rem .8rem;
+    border-radius: 50%;
+    margin-left: 1.4rem;
+    vertical-align: middle;
+    background-color: white;
+    color: #8edafc;
 }
 
 .contact-search-bar {
     width: 100%;
     height: 40px;
-    background-color: green;
+    background-color: #eaeaea;
 }
 
 .contact-list {
     width: 100%;
     height: calc(100% - 190px);
-    background-color: rebeccapurple;
+    background-color: #ffffff;
 }
 
 /* Sezione Chat */
@@ -82,7 +129,7 @@ html {
 .chat-main {
     width: 100%;
     height: calc(100% - 140px);
-    background-color: beige;
+    background-color: #f3eeea;
 }
 
 
@@ -90,8 +137,8 @@ html {
 /* 
 Colori:
 
-chat propria: #d5f9ba
-chat contatto + box scrivi messaggio: #ffffff
+messaggi-chat propria: #d5f9ba
+messaggi-chat contatto + box scrivi messaggio: #ffffff
 bg-notifiche: #8edafc
 bg-utente selezionato: #e9ebeb
 bg-info personali: #eaeaea
