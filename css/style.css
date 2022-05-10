@@ -1,10 +1,103 @@
+/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* COMMON */
 html {
     font-family: 'Lato', sans-serif;
 }
 
+/* Containers */
+.bg-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #d8dbd6;
+}
+
+.main-container {
+    display: flex;
+    justify-content: start;
+    align-items: flex-start;
+    width: 80%;
+    height: 95%;
+    background-color: lightblue;
+}
+
+.contact-container {
+    width: 35%;
+    height: 100%;
+    background-color: lightgreen;
+}
+
+.chat-container {
+    width: 65%;
+    height: 100%;
+    background-color: lightseagreen;
+}
+
+/* Sezione Contatti */
+.contact-header {
+    width: 100%;
+    height: 70px;
+    background-color: red;
+}
+
+.contact-notify-message {
+    width: 100%;
+    height: 80px;
+    background-color: aquamarine;
+}
+
+.contact-search-bar {
+    width: 100%;
+    height: 40px;
+    background-color: green;
+}
+
+.contact-list {
+    width: 100%;
+    height: calc(100% - 190px);
+    background-color: rebeccapurple;
+}
+
+/* Sezione Chat */
+.chat-header {
+    width: 100%;
+    height: 70px;
+    background-color: orange;
+}
+
+.chat-footer {
+    width: 100%;
+    height: 70px;
+    background-color: orangered;
+}
+
+.chat-main {
+    width: 100%;
+    height: calc(100% - 140px);
+    background-color: beige;
+}
+
+
+
+/* 
+Colori:
+
+chat propria: #d5f9ba
+chat contatto + box scrivi messaggio: #ffffff
+bg-notifiche: #8edafc
+bg-utente selezionato: #e9ebeb
+bg-info personali: #eaeaea
+colore icone: #b1b1b1
+colore icone barra scrittura messaggio: #6b7376
+bg-sezione scrivi messaggio: #f3eeea
+barra-verde-bg: #009688
+bg-generale: #d8dbd6
+*/
