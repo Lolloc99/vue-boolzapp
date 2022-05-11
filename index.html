@@ -54,12 +54,15 @@
                     <div class="contact-search-bar">
                         <div>
                             <i class="fas fa-search"></i>
-                            <input type="text" name="searchContacts" id="searchContacts" placeholder="Cerca o inizia una nuova chat">
+                            <input type="text" name="searchContacts" id="searchContacts" placeholder="Cerca o inizia una nuova chat" v-model="researchText" @keyup="filterText">
                         </div>
                     </div>
                     <!-- Lista dei contatti -->
                     <div class="contact-list">
-                        <div v-for="(element, index) in contacts" :class="currentContact === index ? 'activeContact' : ''" @click="selectChat(index)">
+                        <div v-for="(element, index) in contacts" 
+                            :class="currentContact === index ? 'activeContact' : ''" @click="selectChat(index)" 
+                            v-if="element.visible === true ? element.visible = true : element.visible = false">
+
                             <div class="contact">
                                 <div class="contactImg">
                                     <img :src="'img/avatar' +element.avatar+ '.jpg'" :alt="element.name">
@@ -75,6 +78,7 @@
                         </div>
                     </div>
                 </section>
+                <!-- /Sezione lista contatti -->
 
                 <!-- Sezione chat -->
                 <section class="chat-container">
@@ -109,6 +113,7 @@
                     </div>
 
                 </section>
+                <!-- /Sezione chat -->
 
             </div>
 

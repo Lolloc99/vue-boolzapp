@@ -169,6 +169,7 @@ const app = new Vue (
 
             currentContact: 0,
             addNewText: "",
+            researchText: "",
 
         },
         // Methods
@@ -196,6 +197,25 @@ const app = new Vue (
                     }
                     this.contacts[this.currentContact].messages.push(newMex)
                 }, 1000);
+            },
+
+            filterText: function () {
+                console.log(this.researchText);
+                // Scorro l'array di contacts
+                // Per ogni elmento
+                // se il text contiene il search,
+                // visible diventa true
+                // altrimenti
+                // visible diventa false
+                this.contacts.forEach((item) => {
+                    const formattedText = item.name.toLowerCase();
+                    const formattedSearch = this.researchText.toLowerCase();
+                    if (formattedText.includes(formattedSearch)) {
+                        item.visible = true;
+                    } else {
+                        item.visible = false;
+                    }
+                });
             },
         }
     }

@@ -10,8 +10,6 @@ html {
     font-family: 'Lato', sans-serif;
 }
 
-
-
 /* Containers */
 .bg-container {
     display: flex;
@@ -141,6 +139,7 @@ html {
     width: 70%;
     height: 20px;
     border: none;
+    padding-left: .3rem;
 }
 
 /* Contact List */
@@ -193,6 +192,7 @@ html {
 .activeContact {
     background-color: #e9ebeb;
 }
+/* /Sezione Contatti */
 
 /* Sezione Chat */
 /* Chat Header */
@@ -239,7 +239,6 @@ html {
     flex-direction: column;
     width: 100%;
     height: calc(100% - 140px);
-    /* max-height: 751px; */
     overflow-y: auto;
     background-color: #f3eeea;
     background-image: url(../img/mine.jpg);
@@ -277,6 +276,7 @@ html {
     align-self: flex-start;
     background-color: #ffffff;
 }
+/* /Sezione Chat */
 
 
 /* 
