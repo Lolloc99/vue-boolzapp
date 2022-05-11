@@ -59,7 +59,7 @@
                     </div>
                     <!-- Lista dei contatti -->
                     <div class="contact-list">
-                        <div v-for="element in contacts">
+                        <div v-for="(element, index) in contacts" :class="currentContact === index ? 'activeContact' : ''">
                             <div class="contact">
                                 <div class="contactImg">
                                     <img :src="'img/avatar' +element.avatar+ '.jpg'" :alt="element.name">
