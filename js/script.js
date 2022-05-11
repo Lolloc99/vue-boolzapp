@@ -171,7 +171,9 @@ const app = new Vue (
         },
         // Methods
         methods : {
-
+            selectChat: function (index) {
+                this.currentContact = index
+            }
         }
     }
 )

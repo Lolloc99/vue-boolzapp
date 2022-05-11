@@ -239,6 +239,7 @@ html {
     flex-direction: column;
     width: 100%;
     height: calc(100% - 140px);
+    /* max-height: 751px; */
     overflow-y: auto;
     background-color: #f3eeea;
     background-image: url(../img/mine.jpg);

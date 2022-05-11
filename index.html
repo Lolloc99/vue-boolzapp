@@ -59,32 +59,20 @@
                     </div>
                     <!-- Lista dei contatti -->
                     <div class="contact-list">
-                        <div v-for="(element, index) in contacts" :class="currentContact === index ? 'activeContact' : ''">
+                        <div v-for="(element, index) in contacts" :class="currentContact === index ? 'activeContact' : ''" @click="selectChat(index)">
                             <div class="contact">
                                 <div class="contactImg">
                                     <img :src="'img/avatar' +element.avatar+ '.jpg'" :alt="element.name">
                                 </div>
                                 <div class="contactTextBox">
                                     <h6>{{element.name}}</h6>
-                                    <p>Ultimo messaggio inviato</p>
+                                    <p>{{element.messages[element.messages.length - 1].message}}</p>
                                 </div>
                                 <div class="contactMessageDate">
-                                    <h6>12:00</h6>
+                                    <h6>{{element.messages[element.messages.length - 1].date}}</h6>
                                 </div>
                             </div>
                         </div>
-                        <!-- <div class="contact">
-                            <div class="contactImg">
-                                <img src="img/avatar_1.jpg" alt="Michele">
-                            </div>
-                            <div class="contactTextBox">
-                                <h6>Michele</h6>
-                                <p>Ultimo messaggio inviato</p>
-                            </div>
-                            <div class="contactMessageDate">
-                                <h6>12:00</h6>
-                            </div>
-                        </div> -->
                     </div>
                 </section>
 
@@ -94,10 +82,10 @@
                     <!-- Header con info del mittente attuale -->
                     <div class="chat-header">
                         <div>
-                            <img :src="'img/avatar_1.jpg'" :alt="Michele">
+                            <img :src="'img/avatar'+ contacts[currentContact].avatar +'.jpg'" :alt="contacts[currentContact].name">
                             <div class="contactTextBox">
-                                <h6>Michele</h6>
-                                <p>Ultimo accesso oggi alle 12:00</p>
+                                <h6>{{contacts[currentContact].name}}</h6>
+                                <p>Ultimo accesso {{contacts[currentContact].messages[contacts[currentContact].messages.length - 1].date}} </p>
                             </div>
                         </div>
                         <div class="chat-header-icon">
@@ -108,19 +96,9 @@
                     </div>
                     <!-- Sezione messaggi -->
                     <div class="chat-main">
-                        <div class="user-message">
-                            Hai portato a spasso il cane?
-                            <span>15:30</span>
-                        </div>
-
-                        <div class="user-message">
-                            Ricordati di stendere i panni!
-                            <span>15:50</span>
-                        </div>
-
-                        <div class="contact-message">
-                            Tutto fatto!
-                            <span>16:15</span>
+                        <div v-for="item in contacts[currentContact].messages" :class="item.status === 'sent' ? 'user-message' : 'contact-message'">
+                            <p>{{item.message}}</p>
+                            <span>{{item.date}}</span>
                         </div>
                     </div>
                     <!-- Footer per scrittura testo e invio -->
