@@ -265,11 +265,26 @@ html {
 
 .user-message span,
 .contact-message span {
-    position: absolute;
-    bottom: 8px;
-    right: 8px;
     font-size: .6rem;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.user-message i,
+.contact-message i {
+    margin-left: .5rem;
+    font-size: .8rem;
     color: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.user-message div,
+.contact-message div {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    bottom: 6px;
+    right: 8px;
 }
 
 .contact-message {

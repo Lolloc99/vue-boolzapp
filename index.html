@@ -17,6 +17,9 @@
     <!-- Style -->
     <link rel="stylesheet" href="css/style.css">
 
+    <!-- Dayjs -->
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+
     <!-- VueJs -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 
@@ -72,7 +75,8 @@
                                     <p>{{element.messages[element.messages.length - 1].message}}</p>
                                 </div>
                                 <div class="contactMessageDate">
-                                    <h6>{{element.messages[element.messages.length - 1].date}}</h6>
+                                    <!-- Con la funzione che formatta la data a Fabio e Samuele quest'ultima darà errore non funziona, se invece non viene usata la funzione, tutto va bene per tutti, ma formattato con anche i secondi -->
+                                    <h6>{{formatDays(element.messages[element.messages.length - 1].date)}}</h6>
                                 </div>
                             </div>
                         </div>
@@ -89,7 +93,7 @@
                             <img :src="'img/avatar'+ contacts[currentContact].avatar +'.jpg'" :alt="contacts[currentContact].name">
                             <div class="contactTextBox">
                                 <h6>{{contacts[currentContact].name}}</h6>
-                                <p>Ultimo accesso {{contacts[currentContact].messages[contacts[currentContact].messages.length - 1].date}} </p>
+                                <p>Ultimo accesso alle {{formatHour(contacts[currentContact].messages[contacts[currentContact].messages.length - 1].date)}} </p>
                             </div>
                         </div>
                         <div class="chat-header-icon">
@@ -102,7 +106,10 @@
                     <div class="chat-main">
                         <div v-for="item in contacts[currentContact].messages" :class="item.status === 'sent' ? 'user-message' : 'contact-message'">
                             <p>{{item.message}}</p>
-                            <span>{{item.date}}</span>
+                            <div>
+                                <span>{{formatHour(item.date)}}</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
                         </div>
                     </div>
                     <!-- Footer per scrittura testo e invio -->

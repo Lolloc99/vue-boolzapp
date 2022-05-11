@@ -174,13 +174,21 @@ const app = new Vue (
         },
         // Methods
         methods : {
+            formatHour(date) {
+                return dayjs(date).format('HH:mm')
+            },
+
+            formatDays(date) {
+                return dayjs(date).format('DD/MM/YYYY, HH:mm')
+            },
+
             selectChat: function (index) {
                 this.currentContact = index
             },
 
             addNewMessage: function() {
                 const newMex = {
-                    date: "12:00",
+                    date: dayjs().format('DD/MM/YYYY, HH:mm'),
                     message: this.addNewText,
                     status: 'sent'
                 }
@@ -191,7 +199,7 @@ const app = new Vue (
             startTimer: function() {
                 setTimeout(() => {
                     const newMex = {
-                        date: "12:00",
+                        date: dayjs().format('DD/MM/YYYY, HH:mm'),
                         message: "Ok :)",
                         status: 'received'
                     }
