@@ -168,12 +168,35 @@ const app = new Vue (
             ],
 
             currentContact: 0,
+            addNewText: "",
+
         },
         // Methods
         methods : {
             selectChat: function (index) {
                 this.currentContact = index
-            }
+            },
+
+            addNewMessage: function() {
+                const newMex = {
+                    date: "12:00",
+                    message: this.addNewText,
+                    status: 'sent'
+                }
+                this.contacts[this.currentContact].messages.push(newMex)
+                this.addNewText = ""
+            },
+
+            startTimer: function() {
+                setTimeout(() => {
+                    const newMex = {
+                        date: "12:00",
+                        message: "Ok :)",
+                        status: 'received'
+                    }
+                    this.contacts[this.currentContact].messages.push(newMex)
+                }, 1000);
+            },
         }
     }
 )

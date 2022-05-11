@@ -104,7 +104,7 @@
                     <!-- Footer per scrittura testo e invio -->
                     <div class="chat-footer">
                         <i class="far fa-smile"></i>
-                        <input type="text" name="writeMessage" id="writeMessage" placeholder="Scrivi un messaggio">
+                        <input type="text" name="writeMessage" id="writeMessage" placeholder="Scrivi un messaggio" v-model="addNewText" @keyup.enter="startTimer" @keydown.enter="addNewMessage">
                         <i class="fas fa-microphone"></i>
                     </div>
 
