@@ -292,18 +292,16 @@ html {
     background-color: #ffffff;
 }
 
-.select-div {
-    display: flex;
-    flex-direction: column;
-    margin-top: -2rem;
+#select-div {
+    display: none;
     margin-bottom: -5rem;
-    margin-right: 0.5rem;
     background-color: white;
     z-index: 1;
     box-shadow: 1px 1px rgba(0, 0, 0, 0.3);
 }
 
-.select-div h5 {
+#select-div h5 {
+    font-size: .9rem;
     width: 130px;
     padding: .7rem 1rem;
     text-align: center;
@@ -312,8 +310,16 @@ html {
     border: 1px solid transparent;
 }
 
-.select-div h5:hover {
+#select-div h5:hover {
     border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+#message-info i:hover #select-div {
+    display: block;
+}
+
+#message-info i:hover {
+    color: black;
 }
 /* /Sezione Chat */
 
