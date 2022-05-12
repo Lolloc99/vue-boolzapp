@@ -227,6 +227,18 @@ const app = new Vue (
                     }
                 });
             },
+
+            deleteBtn: function(array, index) {
+                const messagesArray = this.contacts[this.currentContact].messages;
+                const messageInArray = messagesArray[index].message;
+                array.splice(index, 1)
+            },
+
+            infoBtn: function(array, index) {
+                const messagesArray = this.contacts[this.currentContact].messages;
+                const messageInArray = messagesArray[index].date;
+                alert("Data invio messaggio: "+ messageInArray);
+            },
         }
     }
 )

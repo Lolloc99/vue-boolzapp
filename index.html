@@ -105,18 +105,16 @@
                     </div>
                     <!-- Sezione messaggi -->
                     <div class="chat-main">
-                        <div v-for="item in contacts[currentContact].messages" :class="item.status === 'sent' ? 'user-message' : 'contact-message' " class="relative">
+                        <div v-for="(item, index) in contacts[currentContact].messages" :class="item.status === 'sent' ? 'user-message' : 'contact-message' ">
                             <p>{{item.message}}</p>
                             <div>
                                 <span>{{formatHour(item.date)}}</span>
                                 <i class="fas fa-chevron-down"></i>
                             </div>
-                            <!--
-                            <div class="select-div hide">
-                                <h5>Message info</h5>
-                                <h5>Delete message</h5>
+                            <div class="select-div">
+                                <h5 @click="infoBtn(contacts[currentContact].messages, index)">Message info</h5>
+                                <h5 @click="deleteBtn(contacts[currentContact].messages, index)">Delete message</h5>
                             </div>
-                            -->
                         </div>
                     </div>
                     <!-- Footer per scrittura testo e invio -->
