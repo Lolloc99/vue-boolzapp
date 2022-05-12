@@ -19,6 +19,7 @@
 
     <!-- Dayjs -->
     <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.8.25/plugin/customParseFormat.js"></script>
 
     <!-- VueJs -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
@@ -104,18 +105,24 @@
                     </div>
                     <!-- Sezione messaggi -->
                     <div class="chat-main">
-                        <div v-for="item in contacts[currentContact].messages" :class="item.status === 'sent' ? 'user-message' : 'contact-message'">
+                        <div v-for="item in contacts[currentContact].messages" :class="item.status === 'sent' ? 'user-message' : 'contact-message' " class="relative">
                             <p>{{item.message}}</p>
                             <div>
                                 <span>{{formatHour(item.date)}}</span>
                                 <i class="fas fa-chevron-down"></i>
                             </div>
+                            <!--
+                            <div class="select-div hide">
+                                <h5>Message info</h5>
+                                <h5>Delete message</h5>
+                            </div>
+                            -->
                         </div>
                     </div>
                     <!-- Footer per scrittura testo e invio -->
                     <div class="chat-footer">
                         <i class="far fa-smile"></i>
-                        <input type="text" name="writeMessage" id="writeMessage" placeholder="Scrivi un messaggio" v-model="addNewText" @keyup.enter="startTimer" @keydown.enter="addNewMessage">
+                        <input type="text" name="writeMessage" id="writeMessage" placeholder="Scrivi un messaggio" v-model="addNewText" @keyup.enter="addNewMessage">
                         <i class="fas fa-microphone"></i>
                     </div>
 

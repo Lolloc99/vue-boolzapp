@@ -1,3 +1,5 @@
+dayjs.extend(window.dayjs_plugin_customParseFormat);
+
 const app = new Vue (
     {
         el : "#root",
@@ -45,7 +47,7 @@ const app = new Vue (
                             date: '20/03/2020 16:35:00',
                             message: 'Mi piacerebbe ma devo andare a fare la spesa.',
                             status: 'sent'
-                        }
+                        },
                     ],
                 },
                 {
@@ -174,12 +176,13 @@ const app = new Vue (
         },
         // Methods
         methods : {
+            
             formatHour(date) {
-                return dayjs(date).format('HH:mm')
+                return dayjs(date, 'DD/MM/YYYY HH:mm:ss').format('HH:mm')
             },
 
             formatDays(date) {
-                return dayjs(date).format('DD/MM/YYYY, HH:mm')
+                return dayjs(date, 'DD/MM/YYYY HH:mm:ss').format('DD/MM/YYYY, HH:mm')
             },
 
             selectChat: function (index) {
@@ -188,23 +191,22 @@ const app = new Vue (
 
             addNewMessage: function() {
                 const newMex = {
-                    date: dayjs().format('DD/MM/YYYY, HH:mm'),
+                    date: dayjs(),
                     message: this.addNewText,
                     status: 'sent'
                 }
                 this.contacts[this.currentContact].messages.push(newMex)
                 this.addNewText = ""
+                setTimeout(this.startTimer, 1000)
             },
 
             startTimer: function() {
-                setTimeout(() => {
-                    const newMex = {
-                        date: dayjs().format('DD/MM/YYYY, HH:mm'),
-                        message: "Ok :)",
-                        status: 'received'
-                    }
-                    this.contacts[this.currentContact].messages.push(newMex)
-                }, 1000);
+                const newMex = {
+                    date: dayjs(),
+                    message: "Ok!",
+                    status: 'received'
+                }
+                this.contacts[this.currentContact].messages.push(newMex)
             },
 
             filterText: function () {

@@ -291,6 +291,32 @@ html {
     align-self: flex-start;
     background-color: #ffffff;
 }
+/*
+.select-div {
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    position: absolute;
+    z-index: 1;
+    background-color: white;
+    bottom: -70px;
+    right: 13px;
+    box-shadow: 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.hide {
+    display: none;
+}
+*/
+
+.select-div h5 {
+    margin: .7rem 0;
+}
+
+.relative {
+    position: relative;
+}
 /* /Sezione Chat */
 
 
